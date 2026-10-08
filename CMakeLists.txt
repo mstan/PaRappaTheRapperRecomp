@@ -53,7 +53,7 @@ psxrecomp_add_game_runtime(psx-runtime
     CODEGEN_SETUP_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/codegen_setup.c"
 )
 
-target_sources(psx-runtime PRIVATE src/parappa_timing.c)
+target_sources(psx-runtime PRIVATE src/parappa_timing.c src/parappa_widescreen.c)
 
 enable_testing()
 add_executable(parappa_timing_test EXCLUDE_FROM_ALL tools/test_timing.c)
@@ -84,4 +84,12 @@ foreach(_PSX_RUNTIME_CONFIG game.toml game_options.toml)
             COMMENT "Staging ${_PSX_RUNTIME_CONFIG}"
             VERBATIM)
     endif()
+endforeach()
+
+foreach(_PSX_RELEASE_IMAGES .github/screenshots launcher_assets/img)
+    add_custom_command(TARGET psx-runtime POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${CMAKE_CURRENT_SOURCE_DIR}/${_PSX_RELEASE_IMAGES}"
+            "$<TARGET_FILE_DIR:psx-runtime>/${_PSX_RELEASE_IMAGES}"
+        VERBATIM)
 endforeach()

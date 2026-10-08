@@ -42,11 +42,12 @@ else
     "no disc at package time: the committed static AOT shard is compiled in and overlay_toolchain/ autocompiles the rest on the player's machine")
 fi
 # Extra docs shipped at the zip root (DISC.md tells players which dump works).
-for _doc in DISC.md; do
+for _doc in README.md DISC.md launcher_assets/img/BOXART_SOURCE.txt third_party/SDL3-LICENSE.txt; do
   if [[ -f "${ROOT}/${_doc}" ]]; then
     EXTRA+=(--doc "${_doc}")
   fi
 done
+EXTRA+=(--runtime-dir .github/screenshots --runtime-dir launcher_assets/img)
 
 cd "${ROOT}"
 exec bash "${PACKAGER}" \

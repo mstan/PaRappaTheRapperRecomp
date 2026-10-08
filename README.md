@@ -1,9 +1,9 @@
 # PaRappaTheRapper Recompiled
 
 <!-- retcomm-readme-metrics -->
-[![GitHub downloads (all assets, all releases)](https://img.shields.io/github/downloads/Kirby1237/PaRappaTheRapperRecomp/total)](https://github.com/Kirby1237/PaRappaTheRapperRecomp/releases)
-[![GitHub downloads (latest release)](https://img.shields.io/github/downloads/Kirby1237/PaRappaTheRapperRecomp/latest/total)](https://github.com/Kirby1237/PaRappaTheRapperRecomp/releases/latest)
-[![GitHub release](https://img.shields.io/github/v/release/Kirby1237/PaRappaTheRapperRecomp)](https://github.com/Kirby1237/PaRappaTheRapperRecomp/releases/latest)
+[![GitHub downloads (all assets, all releases)](https://img.shields.io/github/downloads/mstan/PaRappaTheRapperRecomp/total)](https://github.com/mstan/PaRappaTheRapperRecomp/releases)
+[![GitHub downloads (latest release)](https://img.shields.io/github/downloads/mstan/PaRappaTheRapperRecomp/latest/total)](https://github.com/mstan/PaRappaTheRapperRecomp/releases/latest)
+[![GitHub release](https://img.shields.io/github/v/release/mstan/PaRappaTheRapperRecomp)](https://github.com/mstan/PaRappaTheRapperRecomp/releases/latest)
 <!-- /retcomm-readme-metrics -->
 
 <!-- retcomm-readme-boxart -->
@@ -18,6 +18,25 @@ Static recompilation of **PaRappaTheRapper** built on
 
 Includes an optional Rhythm Timing Assist mod with configurable latency
 compensation and early/late tolerance for controller and keyboard play.
+Enable it in **Mods > Rhythm Timing Assist**. It starts disabled in a fresh
+installation. Start with compensation at **0 ms** and adjust tolerance to
+your setup; set both early and late tolerance to **60 ms** for maximum
+forgiveness. Correct buttons and musical patterns still matter.
+
+**[Download Windows or Linux builds from this fork](https://github.com/mstan/PaRappaTheRapperRecomp/releases/latest).**
+Configure your controller in **Controls**; PaRappa uses a digital pad with
+D-pad directions and unbound analogue sticks.
+
+The default internal-resolution preset is **1080p**. The experimental
+**Widescreen** mod starts enabled at **21:9** and expands the 3D gameplay
+view using the native wide renderer. In **Mods > Widescreen**, choose
+21:9, 16:9, **Fit to window**, or original 4:3. Movies and 2D menus keep
+their original proportions; disabling the mod restores the 4:3 default.
+Existing graphics settings take precedence over the new resolution default;
+select 1080p in the launcher when upgrading an existing installation.
+Other stages still need player validation.
+
+![Stage 1 at 21:9 with rhythm cues visible](.github/screenshots/stage1-21x9.png)
 
 | | |
 |---|---|
