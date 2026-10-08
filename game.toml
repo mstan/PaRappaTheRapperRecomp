@@ -39,6 +39,9 @@ window_title = "PaRappaTheRapper Recompiled"
 memcard_dir = "saves"
 overlay_cache = true
 
+[audio]
+buffer_ms = 60
+
 [video]
 renderer = "opengl"
 aspect_ratio = "4:3"

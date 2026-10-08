@@ -22,6 +22,8 @@ Enable it in **Mods > Rhythm Timing Assist**. It starts disabled in a fresh
 installation. Start with compensation at **0 ms** and adjust tolerance to
 your setup; set both early and late tolerance to **60 ms** for maximum
 forgiveness. Correct buttons and musical patterns still matter.
+The audio-buffer target starts at **60 ms**; timing compensation remains
+adjustable for your controller, display and sound system.
 
 **[Download Windows or Linux builds from this fork](https://github.com/mstan/PaRappaTheRapperRecomp/releases/latest).**
 Configure your controller in **Controls**; PaRappa uses a digital pad with
@@ -106,8 +108,10 @@ committed `generated/` C on Linux and Windows and attaches
 
 ## Local rhythm timing experiment
 
-This checkout is the isolated `timing-lab` branch of
-`kirby1237/PaRappaTheRapperRecomp`, based on `81faa9fe2e8bb64cac6cc272df04335f9df2dfc1`.
+This fork combines the rhythm assist and digital-pad contribution with the
+21:9/1080p display contribution. The timing work began on the isolated
+`timing-lab` branch of `kirby1237/PaRappaTheRapperRecomp`, based on
+`81faa9fe2e8bb64cac6cc272df04335f9df2dfc1`.
 It does not use the owner's separate PaRappa recomp code, settings or saves.
 Only the retail disc data was copied into this checkout's ignored `disc/` folder;
 its MD5 matches upstream's supported USA image. The framework is pinned to
