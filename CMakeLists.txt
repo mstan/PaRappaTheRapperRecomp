@@ -22,7 +22,7 @@ project(PaRappaTheRapperRecomp LANGUAGES C CXX)
 #     set(PSX_NETPLAY ON CACHE BOOL "…" FORCE)
 # endif()
 set(PSX_SETUP_WIZARD ON CACHE BOOL
-    "Advertise first-run setup wizard + Generate & rebuild in recomp-ui" FORCE)
+    "Advertise first-run setup wizard + Generate & rebuild in recomp-ui")
 include("${PSXRECOMP_ROOT}/runtime/runtime.cmake")
 
 # This project's own mod catalog. The FRAMEWORK stages it -- together with its
@@ -35,14 +35,20 @@ if(NOT IS_DIRECTORY "${PSX_PRELOADED_MODS}")
     set(PSX_PRELOADED_MODS "NONE")
 endif()
 
+set(_PARAPPA_SETUP_OPTION "")
+if(PSX_SETUP_WIZARD)
+    set(_PARAPPA_SETUP_OPTION ENABLE_SETUP_WIZARD)
+endif()
+
 psxrecomp_add_game_runtime(psx-runtime
     PRELOADED_MODS_DIR "${PSX_PRELOADED_MODS}"
     # ENABLE_NETPLAY_IF_PRESENT
     # NETPLAY_LOBBY_URL "ws://netplay.retcomm.net:8765"
-    ENABLE_SETUP_WIZARD
+    ${_PARAPPA_SETUP_OPTION}
     WINDOW_TITLE "PaRappaTheRapper Recompiled"
     DEFAULT_GAME_CONFIG_PATH "game.toml"
     MAX_PLAYERS 1
+    EXCLUDE_BUILTIN_MODS psx.enhancement.cd-speed psx.enhancement.fast-loading
     LAUNCHER_BOXART "${CMAKE_CURRENT_SOURCE_DIR}/launcher_assets/img/boxart.tga"
     APP_ICON "${CMAKE_CURRENT_SOURCE_DIR}/assets/psxrecomp.ico"
     # Committed game C (psxrecomp_cli.py generate; git add generated). Release
