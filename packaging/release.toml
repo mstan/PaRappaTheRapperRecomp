@@ -15,7 +15,7 @@ cmake_args = [
     "-DPSXRECOMP_FORCE_SETUP_HOST=OFF",
     "-DPSXRECOMP_REQUIRE_GAME_C=ON",
     "-DPSX_SDL_BACKEND=SDL3",
-    "-DPSX_ENABLE_VULKAN=OFF",
+    "-DPSX_ENABLE_VULKAN=ON",
     "-DPSX_NETPLAY=OFF",
 ]
 regenerate = true

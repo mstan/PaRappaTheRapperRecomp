@@ -6,6 +6,7 @@
   32x choices and a native fallback when disabled. Widescreen remains 21:9.
 - Use the maintained shared release builder with fresh per-build selective
   runtime PGO; keep the existing 60 ms audio-buffer target and netplay OFF.
+- Retain the compiled Vulkan backend option; OpenGL remains the default.
 - Remove generic CD Speed and Fast Loading packages from release catalogs.
 - Honor public setup-wizard OFF while retaining the developer setup option.
 
