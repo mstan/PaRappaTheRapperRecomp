@@ -14,7 +14,7 @@
 
 Static recompilation of **PaRappaTheRapper** built on
 [psxrecomp](https://github.com/mstan/psxrecomp) and
-[recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui).
+[recomp-ui](https://github.com/mstan/recomp-ui).
 
 Includes an optional Rhythm Timing Assist mod with configurable latency
 compensation and early/late tolerance for controller and keyboard play.
@@ -29,13 +29,12 @@ adjustable for your controller, display and sound system.
 Configure your controller in **Controls**; PaRappa uses a digital pad with
 D-pad directions and unbound analogue sticks.
 
-The default internal-resolution preset is **1080p**. The experimental
-**Widescreen** mod starts enabled at **21:9** and expands the 3D gameplay
-view using the native wide renderer. In **Mods > Widescreen**, choose
-21:9, 16:9, **Fit to window**, or original 4:3. Movies and 2D menus keep
-their original proportions; disabling the mod restores the 4:3 default.
-Existing graphics settings take precedence over the new resolution default;
-select 1080p in the launcher when upgrading an existing installation.
+Internal Resolution now defaults **ON at 4x**. In **Mods > Internal Resolution**,
+choose saved Native (1x) through 32x; disabling the mod uses native resolution.
+The experimental **Widescreen** mod retains its enabled **21:9** default and
+native wide renderer. Choose 21:9, 16:9, **Fit to window**, or original 4:3.
+Movies and 2D menus keep their original proportions; disabling Widescreen
+restores the 4:3 view. Existing saved mod choices are preserved.
 Other stages still need player validation.
 
 ![Stage 1 at 21:9 with rhythm cues visible](.github/screenshots/stage1-21x9.png)
@@ -101,12 +100,17 @@ cmake -S . -B build-release -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build-release --target psx-runtime
 ```
 
-Releases: tag `vX.Y.Z` (or run the *Release builds* workflow). CI builds the
-committed `generated/` C on Linux and Windows and attaches
-`prtr-<version>-<platform>.zip`, the compiled game. Locally:
-`scripts/package_release.sh build-release linux-x64`.
+## Official releases
 
-## Local rhythm timing experiment
+Use `scripts/package_release.ps1 --channel public --platform windows` or
+`scripts/package_release.sh --channel public --platform linux`. The maintained
+shared builder owns regeneration, fresh selective runtime PGO, verification and
+packaging. See [BUILDING.md](BUILDING.md) and [RELEASE_NOTES.md](RELEASE_NOTES.md).
+Boot profile collection is a build stage, not a new gameplay or speedup claim.
+The former no-disc CI route remains named `package_release_prebuilt.sh` in a
+manual-only legacy workflow; official tags do not trigger competing artifacts.
+
+## Historical v0.1.2 combined rhythm timing experiment
 
 This fork combines the rhythm assist and digital-pad contribution with the
 21:9/1080p display contribution. The timing work began on the isolated

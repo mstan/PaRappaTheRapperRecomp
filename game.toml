@@ -6,7 +6,7 @@ name = "PaRappaTheRapper"
 id = "SCUS-94183"
 players = 1
 exe = "disc/SCUS_941.83"
-disc = "C:/Users/227572/Downloads/PaRappa the Rapper (USA) (En,Fr,De,Es,It)/PaRappa the Rapper (USA) (En,Fr,De,Es,It).cue"
+disc = "disc/PaRappa the Rapper.cue"
 load_address = "0x80010000"
 entry_pc = "0x80028590"
 text_size = "0x0005F000"
@@ -45,7 +45,7 @@ buffer_ms = 60
 [video]
 renderer = "opengl"
 aspect_ratio = "4:3"
-internal_resolution = "1080p"
+internal_resolution = "native"
 resolution_reference_lines = 240
 
 [widescreen]

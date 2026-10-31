@@ -1,0 +1,16 @@
+PaRappa the Rapper @VERSION@
+
+Extract this folder and run PaRappaTheRapper_Recompiled.exe on Windows.
+Supply your legally owned USA disc image; no disc or retail BIOS is included.
+Keep the CUE and its referenced BIN together. Bundled OpenBIOS is available.
+
+Internal Resolution starts ON at 4x. In Mods, choose saved Native (1x) through
+32x; disabling Internal Resolution uses native resolution. Widescreen retains
+its existing 21:9 default and Fit to window choice. Generic CD Speed and Fast
+Loading packages are excluded. The title uses a digital pad and D-pad directions;
+configure your preferred controller in Controls. Authored input mappings remain.
+
+Rhythm Timing Assist remains disabled by default. The audio-buffer target is
+60 ms. These are the existing title settings; no new gameplay/audio-quality or
+per-title performance improvement is claimed by this release. Current builds use
+build-specific disposable snapshots; keep native memory cards when upgrading.

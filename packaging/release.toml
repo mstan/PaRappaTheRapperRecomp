@@ -1,0 +1,44 @@
+schema = 1
+
+[product]
+name = "prtr"
+display_name = "PaRappaTheRapper Recompiled"
+exe_name = "PaRappaTheRapper_Recompiled"
+version_file = "VERSION"
+player_game_toml = "packaging/release/game.toml"
+zip_folder = "PaRappaTheRapperRecomp"
+launcher_boxart = "launcher_assets/img/boxart.tga"
+
+[build]
+cmake_args = [
+    "-DPSX_SETUP_WIZARD=OFF",
+    "-DPSXRECOMP_FORCE_SETUP_HOST=OFF",
+    "-DPSXRECOMP_REQUIRE_GAME_C=ON",
+    "-DPSX_SDL_BACKEND=SDL3",
+    "-DPSX_ENABLE_VULKAN=OFF",
+    "-DPSX_NETPLAY=OFF",
+]
+regenerate = true
+
+[aot]
+mode = "none"
+
+[overlay_toolchain]
+# Preserve the original release fallback for uncached executable ranges.
+ship = true
+
+[payload]
+start_here = "packaging/release/START_HERE.txt"
+files = [
+    "VERSION", "README.md", "RELEASE_NOTES.md", "BUILDING.md", "DISC.md", "input.ini",
+    ".github/screenshots/stage1-21x9.png",
+    "launcher_assets/img/boxart.png", "launcher_assets/img/boxart.tga",
+    "launcher_assets/img/BOXART_SOURCE.txt", "third_party/SDL3-LICENSE.txt",
+]
+
+[linux]
+app_run = "packaging/linux/AppRun"
+desktop_file = "packaging/linux/io.github.mstan.PaRappaTheRapperRecomp.desktop"
+icon = "launcher_assets/img/boxart.tga"
+payload_dir = "prtr"
+env_prefix = "PARAPPA_RECOMP"
